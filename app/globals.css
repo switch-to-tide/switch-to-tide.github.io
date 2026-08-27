@@ -51,35 +51,23 @@ section {
 .mark { color: var(--accent); display: flex; justify-content: center; }
 
 .hero h1 {
-  font-size: clamp(64px, 12vw, 104px);
+  font-size: clamp(32px, 5.6vw, 62px);
   font-weight: 650;
-  letter-spacing: -0.045em;
-  margin: 14px 0 0;
-  line-height: 1;
+  letter-spacing: -0.035em;
+  margin: 18px 0 0;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .tagline {
   color: var(--accent);
   font-family: var(--mono);
-  font-size: 14px;
-  letter-spacing: 0.3em;
-  margin: 14px 0 34px;
+  font-size: clamp(12px, 1.5vw, 15px);
+  letter-spacing: 0.06em;
+  margin: 14px 0 38px;
 }
 
-.lede {
-  font-size: clamp(21px, 3.4vw, 30px);
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  margin: 0 auto 14px;
-  max-width: 20ch;
-  font-weight: 500;
-}
 
-.rhythm {
-  color: var(--dim);
-  font-size: 17px;
-  margin: 0 0 34px;
-}
 
 .fineprint { color: var(--dim); font-size: 14px; margin: 14px 0 0; }
 
@@ -90,7 +78,7 @@ section {
   gap: 16px;
   margin: 0 auto;
   padding: 16px 16px 16px 24px;
-  max-width: 780px;
+  max-width: 900px;
   background: linear-gradient(180deg, #101c24, #0c151c);
   border: 1px solid #24404a;
   border-radius: 10px;
@@ -100,12 +88,17 @@ section {
 
 .command code {
   flex: 1;
+  min-width: 0;
   font-family: var(--mono);
-  font-size: 14.5px;
+  font-size: clamp(10px, 1.15vw, 13.5px);
   line-height: 1.5;
   color: var(--text);
-  word-break: break-all;
+  white-space: nowrap;      /* one line, always */
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.command code::-webkit-scrollbar { display: none; }
 
 .command .copy {
   flex: none;
@@ -241,17 +234,23 @@ tbody td {
 tbody td.yes { color: var(--accent); font-weight: 500; }
 
 /* ------------------------------------------------------------ terminals */
-.bleed { padding-top: 40px; padding-bottom: 40px; }
+.bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 30px max(24px, calc(50vw - 760px));
+}
 
-.shot { margin: 0 0 40px; }
+.shot { margin: 0; }
 
 .shot-frame {
-  background: #262626;
+  background: #121212;
   border: 1px solid #223039;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.6);
 }
+
+.shot-frame.bare { border-radius: 8px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45); }
 
 .shot-bar {
   display: flex;
@@ -267,21 +266,38 @@ tbody td.yes { color: var(--accent); font-weight: 500; }
 
 .shot-screen {
   margin: 0;
-  padding: 10px 12px;
+  padding: 8px 10px;
   overflow-x: auto;
   font-family: var(--mono);
-  font-size: 12px;
-  line-height: 1.35;
+  font-size: clamp(6px, 0.83vw, 12.5px);
+  line-height: 1.3;
   white-space: pre;
 }
 
-.shot-row { min-height: 1.35em; }
+.shot-row { min-height: 1.3em; }
 
 figcaption {
   color: var(--dim);
-  font-size: 14px;
+  font-size: 13.5px;
   margin-top: 12px;
   font-family: var(--mono);
+}
+
+/* --------------------------------------------------------------- themes */
+.themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 26px;
+}
+
+.themes .shot-screen { font-size: clamp(5px, 0.62vw, 8.6px); line-height: 1.28; }
+
+.theme-label {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 /* --------------------------------------------------------------- closer */
@@ -297,8 +313,7 @@ figcaption {
 @media (max-width: 640px) {
   section { padding: 60px 18px; }
   .hero { padding-top: 68px; }
-  .shot-screen { font-size: 9.5px; }
-  .command { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
-  .command code { font-size: 12px; }
-  .command .copy { width: 100%; }
+  .bleed { padding: 20px 14px; }
+  .command { gap: 10px; padding: 12px 14px; }
+  .command .copy { padding: 8px 12px; }
 }

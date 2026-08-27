@@ -37,19 +37,15 @@ export default function Home() {
 
       <header className="hero">
         <div className="mark"><Wave size={72} /></div>
-        <h1>tide</h1>
-        <p className="tagline">the terminal ide</p>
-        <p className="lede">
-          Your editor, your shell and your git history in one window.
-        </p>
-        <p className="rhythm">Zero config. Zero dependencies. One command.</p>
+        <h1>Tide — the Terminal IDE</h1>
+        <p className="tagline">lightweight. fast. flow with the tide</p>
         <Command text={INSTALL} />
         <p className="fineprint">Python 3.7+ · macOS and Linux · then run <code>tide</code></p>
       </header>
 
-      <section className="bleed">
+      <div className="bleed">
         <Screen name="editor" />
-      </section>
+      </div>
 
       <section>
         <p className="eyebrow">what you get</p>
@@ -109,8 +105,24 @@ export default function Home() {
 
       <section className="shots">
         <p className="eyebrow">a closer look</p>
-        <Screen name="diff" caption="Diff against the last commit, live, read-only." />
-        <Screen name="split" caption="Split view: file left, shell right, tabs for both." />
+      </section>
+
+      <div className="bleed">
+        <Screen name="diff" caption="A diff against the last commit: read-only, and it keeps up as you type." />
+      </div>
+
+      <div className="bleed">
+        <Screen name="split" caption="Split view: the file on the left, a full-size shell on the right." />
+      </div>
+
+      <section>
+        <p className="eyebrow">four themes</p>
+        <div className="themes">
+          <Screen name="theme_dark" label="dark" chrome={false} />
+          <Screen name="theme_midnight" label="midnight" chrome={false} />
+          <Screen name="theme_ember" label="ember" chrome={false} />
+          <Screen name="theme_light" label="light" chrome={false} />
+        </div>
       </section>
 
       <section className="closer">
