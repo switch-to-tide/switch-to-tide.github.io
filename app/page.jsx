@@ -1,3 +1,4 @@
+import Command from './Command';
 import Screen from './Screen';
 import Wave from './Wave';
 
@@ -29,10 +30,6 @@ const ROWS = [
   ['Download size', 'one folder of Python', 'editor + plugins', '~300 MB'],
 ];
 
-function Command() {
-  return <pre className="command">{INSTALL}</pre>;
-}
-
 export default function Home() {
   return (
     <main>
@@ -46,7 +43,7 @@ export default function Home() {
           Your editor, your shell and your git history in one window.
         </p>
         <p className="rhythm">Zero config. Zero dependencies. One command.</p>
-        <Command />
+        <Command text={INSTALL} />
         <p className="fineprint">Python 3.7+ · macOS and Linux · then run <code>tide</code></p>
       </header>
 
@@ -117,8 +114,8 @@ export default function Home() {
       </section>
 
       <section className="closer">
-        <h2>Try it in the next ten seconds</h2>
-        <Command />
+        <h2>Install it</h2>
+        <Command text={INSTALL} />
         <p className="fineprint">
           Then run <code>tide</code> in any directory.
         </p>

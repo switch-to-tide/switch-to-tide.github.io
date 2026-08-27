@@ -85,24 +85,52 @@ section {
 
 /* -------------------------------------------------------------- command */
 .command {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin: 0 auto;
-  padding: 20px 24px;
-  max-width: 760px;
+  padding: 16px 16px 16px 24px;
+  max-width: 780px;
   background: linear-gradient(180deg, #101c24, #0c151c);
   border: 1px solid #24404a;
   border-radius: 10px;
   box-shadow: 0 0 0 1px rgba(88, 215, 201, 0.06), 0 20px 44px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.command code {
+  flex: 1;
   font-family: var(--mono);
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--text);
-  text-align: left;
-  white-space: pre-wrap;
   word-break: break-all;
 }
 
-.command::before {
+.command .copy {
+  flex: none;
+  padding: 9px 16px;
+  border: 1px solid #2c4a54;
+  border-radius: 7px;
+  background: #14232b;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.command .copy:hover { background: #1b303a; border-color: var(--accent); }
+.command .copy:active { transform: translateY(1px); }
+
+.command .copy.done {
+  background: rgba(88, 215, 201, 0.16);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.command code::before {
   content: '$ ';
   color: var(--accent);
 }
@@ -270,5 +298,7 @@ figcaption {
   section { padding: 60px 18px; }
   .hero { padding-top: 68px; }
   .shot-screen { font-size: 9.5px; }
-  .command { font-size: 12.5px; padding: 16px 18px; }
+  .command { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
+  .command code { font-size: 12px; }
+  .command .copy { width: 100%; }
 }
