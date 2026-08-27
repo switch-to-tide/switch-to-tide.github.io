@@ -21,14 +21,33 @@ const SAFETY = [
   ['Never guesses encodings', 'Not valid UTF-8 means read-only, not corrupted.'],
 ];
 
+const COLUMNS = ['tide', 'Vim / Neovim', 'Helix', 'Micro', 'VS Code'];
+
+// '+' built in, '-' not there, anything else is shown as a word
 const ROWS = [
-  ['Ready on install', 'yes', 'config + plugins', 'yes'],
-  ['Mouse and tabs', 'yes', 'partly', 'yes'],
-  ['Shells inside it', 'many', 'plugin', 'yes'],
-  ['Git marks and diffs', 'yes', 'plugin', 'yes'],
-  ['Works over ssh', 'yes', 'yes', 'extension'],
-  ['Download size', 'one folder of Python', 'editor + plugins', '~300 MB'],
+  ['Nothing to configure', '+', 'config', '+', '+', '+'],
+  ['Mouse selection', '+', 'opt-in', '+', '+', '+'],
+  ['Scrollbar you can drag', '+', '-', '-', '-', '+'],
+  ['File tree in a pane', '+', 'plugin', 'picker', 'plugin', '+'],
+  ['Editor tabs', '+', '+', '+', '+', '+'],
+  ['A shell inside the editor', '+', '+', '-', '+', '+'],
+  ['Several shells at once', '+', '+', '-', '-', '+'],
+  ['A file and a shell side by side', '+', '+', '-', '+', '+'],
+  ['Git marks in the gutter', '+', 'plugin', '+', 'plugin', '+'],
+  ['Side by side diffs', '+', 'plugin', '-', '-', '+'],
+  ['Diff against the upstream branch', '+', 'plugin', '-', '-', 'plugin'],
+  ['Auto-save', '+', 'opt-in', '-', '-', '+'],
+  ['Language servers', '-', 'nvim', '+', 'plugin', '+'],
+  ['Plugins', '-', '+', '-', '+', '+'],
+  ['Works over ssh', '+', '+', '+', '+', 'extension'],
+  ['What you download', 'one folder', 'a few MB', 'a few MB', 'a few MB', '~300 MB'],
 ];
+
+function Cell({ value }) {
+  if (value === '+') return <td className="mark yes">+</td>;
+  if (value === '-') return <td className="mark no">–</td>;
+  return <td className="mark word">{value}</td>;
+}
 
 export default function Home() {
   return (
@@ -77,30 +96,38 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
+      <section className="compare">
         <p className="eyebrow">against the alternatives</p>
+        <h2>One program, not a kit of parts.</h2>
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
                 <th />
-                <th>tide</th>
-                <th>vim · helix · micro</th>
-                <th>VS Code</th>
+                {COLUMNS.map((name) => (
+                  <th key={name} className={name === 'tide' ? 'ours' : undefined}>
+                    {name}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {ROWS.map(([label, a, b, c]) => (
+              {ROWS.map(([label, ...cells]) => (
                 <tr key={label}>
                   <th scope="row">{label}</th>
-                  <td className="yes">{a}</td>
-                  <td>{b}</td>
-                  <td>{c}</td>
+                  {cells.map((value, i) => (
+                    <Cell key={i} value={value} />
+                  ))}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <p className="footnote">
+          Two of those go the other way, and they are the honest ones: no language
+          server, no plugins. tide is the parts of an IDE you always want, finished,
+          rather than every part you might ever want, unassembled.
+        </p>
       </section>
 
       <section className="shots">
