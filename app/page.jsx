@@ -153,6 +153,13 @@ export default function Home() {
       </section>
 
       <div className="bleed">
+        <Screen
+          name="claude"
+          caption="Claude Code running in the right half, the file it is reading in the left."
+        />
+      </div>
+
+      <div className="bleed">
         <Screen name="diff" caption="A diff against the last commit: read-only, and it keeps up as you type." />
       </div>
 
