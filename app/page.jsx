@@ -44,9 +44,9 @@ const ROWS = [
 ];
 
 function Cell({ value }) {
-  if (value === '+') return <td className="mark yes">+</td>;
-  if (value === '-') return <td className="mark no">–</td>;
-  return <td className="mark word">{value}</td>;
+  if (value === '+') return <td className="cell yes">✓</td>;
+  if (value === '-') return <td className="cell no">✗</td>;
+  return <td className="cell word">{value}</td>;
 }
 
 export default function Home() {
