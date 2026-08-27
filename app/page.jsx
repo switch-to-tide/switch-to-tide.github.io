@@ -40,7 +40,7 @@ const ROWS = [
   ['Language servers', '-', 'nvim', '+', 'plugin', '+'],
   ['Plugins', '-', '+', '-', '+', '+'],
   ['Works over ssh', '+', '+', '+', '+', 'extension'],
-  ['What you download', 'one folder', 'a few MB', 'a few MB', 'a few MB', '~300 MB'],
+  ['What you download', '480 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
 ];
 
 function Cell({ value }) {
@@ -57,7 +57,7 @@ export default function Home() {
       <header className="hero">
         <div className="mark"><Wave size={72} /></div>
         <h1>Tide — the Terminal IDE</h1>
-        <p className="tagline">lightweight. fast. flow with the tide</p>
+        <p className="tagline">lightweight. fast. secure. flow with the tide</p>
         <Command text={INSTALL} />
         <p className="fineprint">Python 3.7+ · macOS and Linux · then run <code>tide</code></p>
       </header>
@@ -92,7 +92,8 @@ export default function Home() {
         <p className="stat">
           <strong>210 tests</strong> on the file handling alone, out of 461,
           including a randomised session that checks after every edit that the
-          buffer and the file cannot drift apart unnoticed.
+          buffer and the file cannot drift apart unnoticed. The download is
+          6,400 lines of editor and 6,200 lines of tests, almost one for one.
         </p>
       </section>
 
