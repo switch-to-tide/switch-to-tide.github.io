@@ -41,7 +41,6 @@ const ROWS = [
   ['Diff against the upstream branch', '+', 'plugin', '-', '-', 'plugin'],
   ['Auto-save', '+', 'opt-in', '-', '-', '+'],
   ['Works over ssh', '+', '+', '+', '+', 'extension'],
-  ['Search across the project', '-', '+', '+', 'plugin', '+'],
   ['Size of the program', '234 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
 ];
 
