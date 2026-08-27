@@ -20,6 +20,8 @@ const SAFETY = [
   ['One buffer per file', 'Matched by inode, so no path spelling opens it twice.'],
   ['Never overwrites blind', 'Changed underneath you? It stops and shows the diff.'],
   ['Never guesses encodings', 'Not valid UTF-8 means read-only, not corrupted.'],
+  ['Permissions survive', 'Mode, owner, symlinks, hard links. A 600 file stays 600.'],
+  ['Nothing else on disk', 'No swap files, no backups. Undo lives in memory.'],
 ];
 
 const COLUMNS = ['tide', 'Vim / Neovim', 'Helix', 'Micro', 'VS Code'];
@@ -90,10 +92,10 @@ export default function Home() {
           ))}
         </div>
         <p className="stat">
-          <strong>210 tests</strong> on the file handling alone, out of 461,
+          <strong>210 tests</strong> on the file handling alone, out of 472,
           including a randomised session that checks after every edit that the
           buffer and the file cannot drift apart unnoticed. The editor is
-          6,400 lines and its tests are 6,200, almost one for one.
+          6,500 lines and its tests are 6,400, almost one for one.
         </p>
       </section>
 
