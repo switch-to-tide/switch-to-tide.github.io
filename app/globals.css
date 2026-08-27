@@ -341,43 +341,19 @@ figcaption {
   margin-top: 10px;
 }
 
-/* ---------------------------------------------------------------- usage */
-.usage {
-  max-width: 560px;
-  margin: 34px auto 6px;
-  text-align: left;
-  display: grid;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.usage > div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 18px;
-  background: var(--panel);
-  padding: 13px 18px;
-}
-
-.usage dt {
-  font-family: var(--mono);
-  font-size: 13.5px;
-  color: var(--accent);
-  min-width: 200px;
-}
-
-.usage dd {
-  margin: 0;
-  color: var(--dim);
-  font-size: 14px;
-}
-
 /* --------------------------------------------------------------- closer */
 .closer { text-align: center; padding-bottom: 100px; }
+
+.run {
+  margin: 30px auto 0;
+  font-size: 17px;
+  color: var(--dim);
+}
+
+.run code {
+  font-size: 17px;
+  padding: 3px 9px;
+}
 .closer h2 { margin-bottom: 26px; }
 .footmark {
   display: flex;
