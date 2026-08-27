@@ -14,6 +14,14 @@ const FEATURES = [
   ['Auto-save', 'Written a moment after you stop typing. Atomically.'],
 ];
 
+const USAGE = [
+  ['tide', 'open the directory you are in'],
+  ['tide tides.py', 'open a file'],
+  ['tide src/ main.py', 'a project, and a file to start on'],
+  ['tide --theme light', 'pick a theme for this session'],
+  ['tide --no-autosave', 'save only when you press ctrl+s'],
+];
+
 const SAFETY = [
   ['Atomic writes', 'Temp file, fsync, rename. VS Code truncates yours first.'],
   ['One buffer per file', 'Matched by inode, so no path spelling opens it twice.'],
@@ -153,8 +161,18 @@ export default function Home() {
       <section className="closer">
         <h2>Install it</h2>
         <Command text={INSTALL} />
+
+        <dl className="usage">
+          {USAGE.map(([command, what]) => (
+            <div key={command}>
+              <dt>{command}</dt>
+              <dd>{what}</dd>
+            </div>
+          ))}
+        </dl>
+
         <p className="fineprint">
-          Then run <code>tide</code> in any directory.
+          Everything else is on <code>f1</code>.
         </p>
         <div className="footmark"><Wave size={30} /></div>
       </section>
