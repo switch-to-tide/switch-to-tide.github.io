@@ -40,7 +40,7 @@ const ROWS = [
   ['Auto-save', '+', 'opt-in', '-', '-', '+'],
   ['Works over ssh', '+', '+', '+', '+', 'extension'],
   ['Search across the project', '-', '+', '+', 'plugin', '+'],
-  ['What you download', '480 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
+  ['Size of the program', '234 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
 ];
 
 function Cell({ value }) {
@@ -92,8 +92,8 @@ export default function Home() {
         <p className="stat">
           <strong>210 tests</strong> on the file handling alone, out of 461,
           including a randomised session that checks after every edit that the
-          buffer and the file cannot drift apart unnoticed. The download is
-          6,400 lines of editor and 6,200 lines of tests, almost one for one.
+          buffer and the file cannot drift apart unnoticed. The editor is
+          6,400 lines and its tests are 6,200, almost one for one.
         </p>
       </section>
 
