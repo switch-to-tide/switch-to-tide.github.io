@@ -38,8 +38,6 @@ const ROWS = [
   ['Scrollbar you can drag', '+', '-', '-', '-', '+'],
   ['File tree in a pane', '+', 'plugin', 'picker', 'plugin', '+'],
   ['Editor tabs', '+', '+', '+', '+', '+'],
-  ['Multiple cursors', '-', 'plugin', '+', '+', '+'],
-  ['Search across the project', '-', '+', '+', 'plugin', '+'],
   ['A shell inside the editor', '+', '+', '-', '+', '+'],
   ['Several shells at once', '+', '+', '-', '-', '+'],
   ['A file and a shell side by side', '+', '+', '-', '+', '+'],
@@ -48,6 +46,7 @@ const ROWS = [
   ['Diff against the upstream branch', '+', 'plugin', '-', '-', 'plugin'],
   ['Auto-save', '+', 'opt-in', '-', '-', '+'],
   ['Works over ssh', '+', '+', '+', '+', 'extension'],
+  ['Search across the project', '-', '+', '+', 'plugin', '+'],
   ['What you download', '480 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
 ];
 
