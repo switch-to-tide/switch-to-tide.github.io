@@ -37,8 +37,6 @@ const ROWS = [
   ['Side by side diffs', '+', 'plugin', '-', '-', '+'],
   ['Diff against the upstream branch', '+', 'plugin', '-', '-', 'plugin'],
   ['Auto-save', '+', 'opt-in', '-', '-', '+'],
-  ['Language servers', '-', 'nvim', '+', 'plugin', '+'],
-  ['Plugins', '-', '+', '-', '+', '+'],
   ['Works over ssh', '+', '+', '+', '+', 'extension'],
   ['What you download', '480 KB', 'a few MB', 'tens of MB', 'a few MB', '~300 MB'],
 ];
@@ -125,9 +123,8 @@ export default function Home() {
           </table>
         </div>
         <p className="footnote">
-          Two of those go the other way, and they are the honest ones: no language
-          server, no plugins. tide is the parts of an IDE you always want, finished,
-          rather than every part you might ever want, unassembled.
+          The parts of an IDE you always want, finished, rather than every part you
+          might ever want, unassembled.
         </p>
       </section>
 
