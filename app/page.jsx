@@ -61,6 +61,23 @@ export default function Home() {
         <p className="tagline">lightweight. fast. secure. flow with the tide</p>
         <Command text={INSTALL} />
         <p className="fineprint">Python 3.7+ · macOS and Linux · then run <code>tide</code></p>
+        <a
+          className="docs"
+          href="https://tide-docs.readthedocs.io/en/latest/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="15" height="17" viewBox="0 0 15 17" fill="none" aria-hidden="true">
+            <path
+              d="M9 1H3a1.5 1.5 0 0 0-1.5 1.5v12A1.5 1.5 0 0 0 3 16h9a1.5 1.5 0 0 0 1.5-1.5V5.5L9 1Z"
+              stroke="currentColor"
+              strokeWidth="1.3"
+              strokeLinejoin="round"
+            />
+            <path d="M9 1v4.5h4.5M4.6 8.8h5.8M4.6 11.8h5.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+          </svg>
+          Documentation
+        </a>
       </header>
 
       <div className="bleed">

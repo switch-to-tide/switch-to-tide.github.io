@@ -71,6 +71,27 @@ section {
 
 .fineprint { color: var(--dim); font-size: 14px; margin: 14px 0 0; }
 
+.docs {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 26px;
+  padding: 10px 18px 10px 16px;
+  border: 1px solid #2c4a54;
+  border-radius: 8px;
+  background: #101c24;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.docs:hover { background: #1b303a; border-color: var(--accent); }
+.docs:active { transform: translateY(1px); }
+.docs svg { flex: none; }
+
 /* -------------------------------------------------------------- command */
 .command {
   display: flex;
