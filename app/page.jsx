@@ -38,6 +38,8 @@ const ROWS = [
   ['Scrollbar you can drag', '+', '-', '-', '-', '+'],
   ['File tree in a pane', '+', 'plugin', 'picker', 'plugin', '+'],
   ['Editor tabs', '+', '+', '+', '+', '+'],
+  ['Multiple cursors', '-', 'plugin', '+', '+', '+'],
+  ['Search across the project', '-', '+', '+', 'plugin', '+'],
   ['A shell inside the editor', '+', '+', '-', '+', '+'],
   ['Several shells at once', '+', '+', '-', '-', '+'],
   ['A file and a shell side by side', '+', '+', '-', '+', '+'],
